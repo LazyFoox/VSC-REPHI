@@ -9,6 +9,7 @@ class infoslist(commands.Cog):
     async def guildinfo(self, ctx):
         guild = ctx.guild()
         embed=discord.Embed(timestamp=ctx.message.created_at, title="Owner info", description=f"**Server name**: {guild.name}\n**Owner**: {guild.owner.name}#{guild.owner.discriminator}")
+        print(embed=embed)
         
 async def setup(bot):
     await bot.add_cog(infoslist(bot))
