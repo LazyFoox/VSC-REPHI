@@ -7,7 +7,7 @@ class help(commands.Cog):
 
     @commands.command()
     async def help(self, ctx):
-        embed = discord.Embed(title="Help", description=";help (this is a beta commands. textholder)")
+        embed = discord.Embed(title="Help", description=";help (this is a beta commands. textholder)\n;guildinfo\n;button\n;google\n;selected")
         await ctx.send(embed)
 
 async def setup(bot):
