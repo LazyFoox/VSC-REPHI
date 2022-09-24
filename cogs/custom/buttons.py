@@ -16,6 +16,26 @@ class buttony(commands.Cog):
         view = View()
         view.add_item(button)
         await ctx.send("sup", view=view)
+
+    @commands.command()
+    async def selected(self, ctx):
+        select = Select(
+            placeholder="what word you wanna say",
+            options=[
+                discord.SelectOption(label="floofy", description="so cute furs!"),
+                discord.SelectOption(label="cuddle", description="snuzzle?"),
+                discord.SelectOption(label="got to go", description="endy")
+            ])
+        async def my_callback(interaction: discord.Interaction):
+            if interaction.user.id == ctx.author.id:
+                await interaction.followup.send(select.values[0])
+                
+                
+
+        select.callback = my_callback
+        view = View()
+        view.add_item(select)
+        await ctx.send("what do i say", view=view)
         
 
 async def setup(bot):
