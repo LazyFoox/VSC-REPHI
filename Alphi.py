@@ -46,7 +46,9 @@ async def load_extension():
     
     print(tree)
 
-DFGPOJDFOPG
+@bot.commands()
+async def test(ctx):
+    await ctx.send("hello!")
 
 @bot.command()
 async def dosomething(ctx):
