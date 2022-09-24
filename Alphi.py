@@ -29,6 +29,7 @@ async def on_ready():
 list = (
     "servers",
     "bots",
+    "custom",
 )
 
 async def load_extension():
