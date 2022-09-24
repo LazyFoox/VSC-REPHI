@@ -20,27 +20,25 @@ class autocog(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def testerror(self, ctx):
-        try:
-            print(1/0)
-        except Exception:
-            log.exeption("error!")
-
-    @commands.command()
     async def load(self, ctx, cogsname=None):
         try:
             await self.bot.load_extension("cogs."+cogsname)
+            await ctx.send(cogsname + " is been loaded!")
         except Exception:
             log.exeption("error!")
 
     @commands.command()
     async def unload(self, ctx, cogsname=None):
         await self.bot.unload_extension("cogs."+cogsname)
+        await ctx.send(cogsname + " is been unloaded!")
 
     @commands.command()
     async def reload(self, ctx, cogsname=None):
-        await self.bot.reload_extension("cogs."+cogsname)
-
+        try:
+            await self.bot.reload_extension("cogs."+cogsname)
+            await ctx.send(cogsname + " is been reloaded!")
+        except Exception:
+            log.exeption("error!")
 
 async def setup(bot):
     await bot.add_cog(autocog(bot))
