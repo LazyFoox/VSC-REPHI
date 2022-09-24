@@ -7,7 +7,8 @@ class help(commands.Cog):
 
     @commands.command()
     async def help(self, ctx):
-        await ctx.send("cog exist!")
+        embed = discord.Embed(title="Help", description=";help (this is a beta commands. textholder)")
+        await ctx.send(embed)
 
 async def setup(bot):
     await bot.add_cog(help(bot))

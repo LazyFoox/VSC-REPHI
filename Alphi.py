@@ -11,7 +11,7 @@ from rich.tree import Tree
 from rich.text import Text
 from rich.progress import track
 
-ha = TinyDB("data/ha.json")
+#ha = TinyDB("data/ha.json")
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -46,14 +46,10 @@ async def load_extension():
     
     print(tree)
 
-@bot.commands()
-async def test(ctx):
-    await ctx.send("hello!") # this is a test
 
 @bot.command()
 async def dosomething(ctx):
     await ctx.send("I did something")
 
-ha.insert({"ha": "hello there", "hah": 12})
 
 bot.run(data.TOKEN, reconnect=True)
