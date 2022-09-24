@@ -23,6 +23,7 @@ bot = commands.Bot(command_prefix=data.PREFIX, intents=intents, help_command=Non
 async def on_ready():
     print("started! hello worldy wodry")
     await load_extension()
+    await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game("pog lazyfoox using vsc pc"))
 
 # cogs list
 list = (
