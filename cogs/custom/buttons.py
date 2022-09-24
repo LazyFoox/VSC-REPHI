@@ -18,6 +18,12 @@ class buttony(commands.Cog):
         await ctx.send("sup", view=view)
 
     @commands.command()
+    async def google(self, ctx):
+        view = View()
+        view.add_item(discord.ui.Button(label="click here!", url="https://google.com"))
+        await ctx.send(view=view)
+
+    @commands.command()
     async def selected(self, ctx):
         select = Select(
             placeholder="what word you wanna say",
@@ -29,9 +35,6 @@ class buttony(commands.Cog):
         async def my_callback(interaction: discord.Interaction):
             if interaction.user.id == ctx.author.id:
                 await interaction.followup.send(select.values[0])
-                
-                
-
         select.callback = my_callback
         view = View()
         view.add_item(select)
