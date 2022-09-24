@@ -48,7 +48,7 @@ async def load_extension():
 
 @bot.commands()
 async def test(ctx):
-    await ctx.send("hello!")
+    await ctx.send("hello!") # this is a test
 
 @bot.command()
 async def dosomething(ctx):
